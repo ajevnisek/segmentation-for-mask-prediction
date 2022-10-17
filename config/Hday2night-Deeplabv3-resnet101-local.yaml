@@ -1,0 +1,27 @@
+DATASET:
+  root_dataset: "../data/Image_Harmonization_Dataset/"
+  list_train: "./data/Hday2night-training.odgt"
+  list_val: "./data/Hday2night-validation.odgt"
+  num_class: 2
+
+
+MODEL:
+  arch: "Deeplabv3"
+  encoder_name: "resnet101"
+
+TRAIN:
+  batch_size_per_gpu: 16
+  num_epochs: 1
+  optim: "SGD"
+  lr: 1e-4
+
+
+VAL:
+  visualize: False
+  checkpoint: "epoch_20.pth"
+
+TEST:
+  checkpoint: "epoch_20.pth"
+  result: "./"
+
+DIR: "ckpt/Hday2night-Deeplabv3-resnet101"
