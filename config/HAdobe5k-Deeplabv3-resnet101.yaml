@@ -10,18 +10,18 @@ MODEL:
   encoder_name: "resnet101"
 
 TRAIN:
-  batch_size_per_gpu: 16
-  num_epochs: 20
+  batch_size_per_gpu: 8
+  num_epochs: 200
   optim: "SGD"
   lr: 1e-4
 
 
 VAL:
   visualize: False
-  checkpoint: "epoch_20.pth"
+  checkpoint: "epoch_200.pth"
 
 TEST:
-  checkpoint: "epoch_20.pth"
+  checkpoint: "epoch_200.pth"
   result: "./"
 
 DIR: "/storage/jevnisek/ImageHarmonizationResults/ckpt/HAdobe5k-Deeplabv3-resnet101"
