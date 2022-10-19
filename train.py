@@ -43,13 +43,19 @@ def parse_args():
 
 cfg = parse_args()
 
+if not os.path.exists(cfg.DIR):
+    head, tail = os.path.split(cfg.DIR)
+    cfg.DIR = os.path.join('ckpt', tail)
+
 # download data
-root = "../data/Image_Harmonization_Dataset/"
 dataset = cfg.DATASET.name
 train_odgt = f'./data/{dataset}-training.odgt'
 test_odgt = f'./data/{dataset}-validation.odgt'
 
 # init train, val, test sets
+
+if not os.path.exists(cfg.DATASET.root_dataset):
+    cfg.DATASET.root_dataset = '../data/Image_Harmonization_Dataset/'
 train_dataset = ImageHarmonizationMaskDataset(cfg.DATASET.root_dataset,
                                               train_odgt, "train")
 valid_dataset = ImageHarmonizationMaskDataset(cfg.DATASET.root_dataset,
