@@ -46,7 +46,8 @@ class SimpleImageHarmonizationMaskDataset(torch.utils.data.Dataset):
         trimap = np.array(Image.open(mask_path).convert('L'))
         mask = self._preprocess_mask(trimap)
 
-        sample = dict(image=image, mask=mask, trimap=trimap)
+        _, tail = os.path.split(this_record['fpath_img'])
+        sample = dict(image=image, mask=mask, trimap=trimap, name=tail)
         if self.transform is not None:
             sample = self.transform(**sample)
 
