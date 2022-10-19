@@ -1,4 +1,5 @@
 DATASET:
+  name: 'HAdobe5k'
   root_dataset: "/storage/jevnisek/ImageHarmonizationDataset/"
   list_train: "./data/HAdobe5k-training.odgt"
   list_val: "./data/HAdobe5k-validation.odgt"

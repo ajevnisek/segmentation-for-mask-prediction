@@ -45,7 +45,7 @@ cfg = parse_args()
 
 # download data
 root = "../data/Image_Harmonization_Dataset/"
-dataset = 'Hday2night'
+dataset = cfg.DATASET.name
 train_odgt = f'./data/{dataset}-training.odgt'
 test_odgt = f'./data/{dataset}-validation.odgt'
 

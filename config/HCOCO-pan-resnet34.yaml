@@ -1,4 +1,5 @@
 DATASET:
+  name: 'HCOCO'
   root_dataset: "/storage/jevnisek/ImageHarmonizationDataset/"
   list_train: "./data/HCOCO-training.odgt"
   list_val: "./data/HCOCO-validation.odgt"

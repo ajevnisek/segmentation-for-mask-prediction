@@ -11,6 +11,7 @@ _C.DIR = "ckpt/Hday2night-DeepLabV3-resnet34"
 # Dataset
 # -----------------------------------------------------------------------------
 _C.DATASET = CN()
+_C.DATASET.name = 'HCOCO'
 _C.DATASET.root_dataset = ".../data/Image_Harmonization_Dataset/"
 _C.DATASET.list_train = "./data/Hday2night-training.odgt"
 _C.DATASET.list_val = "./data/Hday2night-validation.odgt"
