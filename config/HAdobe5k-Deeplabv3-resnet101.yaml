@@ -12,17 +12,17 @@ MODEL:
 
 TRAIN:
   batch_size_per_gpu: 8
-  num_epochs: 2000
+  num_epochs: 25
   optim: "Adam"
   lr: 1e-4
 
 
 VAL:
   visualize: False
-  checkpoint: "epoch_2000.pth"
+  checkpoint: "epoch_25.pth"
 
 TEST:
-  checkpoint: "epoch_2000.pth"
+  checkpoint: "epoch_25.pth"
   result: "./"
 
 DIR: "/storage/jevnisek/ImageHarmonizationResults/ckpt/HAdobe5k-Deeplabv3-resnet101"

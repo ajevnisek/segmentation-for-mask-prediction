@@ -4,6 +4,9 @@ def generate_line(dataset, arch, encoder_name):
 
 
 for dataset in ['HAdobe5k', 'HCOCO']:
-    for arch in ['PAN', 'DeepLabV3']:
+    for arch in [
+        'PAN',
+        # 'DeepLabV3'
+    ]:
         for encoder_name in ['resnet34', 'resnet101']:
             print(generate_line(dataset.lower(), arch.lower(), encoder_name.lower()))
