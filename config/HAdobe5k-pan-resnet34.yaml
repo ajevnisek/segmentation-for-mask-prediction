@@ -1,13 +1,13 @@
 DATASET:
   root_dataset: "/storage/jevnisek/ImageHarmonizationDataset/"
-  list_train: "./data/HCOCO-training.odgt"
-  list_val: "./data/HCOCO-validation.odgt"
+  list_train: "./data/HAdobe5k-training.odgt"
+  list_val: "./data/HAdobe5k-validation.odgt"
   num_class: 2
 
 
 MODEL:
-  arch: "Deeplabv3"
-  encoder_name: "PAN"
+  arch: "PAN"
+  encoder_name: "resnet34"
 
 TRAIN:
   batch_size_per_gpu: 8
@@ -24,4 +24,4 @@ TEST:
   checkpoint: "epoch_2000.pth"
   result: "./"
 
-DIR: "/storage/jevnisek/ImageHarmonizationResults/ckpt/HCOCO-Deeplabv3-resnet101"
+DIR: "/storage/jevnisek/ImageHarmonizationResults/ckpt/HAdobe5k-PAN-resnet34"

@@ -6,8 +6,8 @@ DATASET:
 
 
 MODEL:
-  arch: "Deeplabv3"
-  encoder_name: "PAN"
+  arch: "PAN"
+  encoder_name: "resnet101"
 
 TRAIN:
   batch_size_per_gpu: 8
@@ -24,4 +24,4 @@ TEST:
   checkpoint: "epoch_2000.pth"
   result: "./"
 
-DIR: "/storage/jevnisek/ImageHarmonizationResults/ckpt/HAdobe5k-Deeplabv3-resnet101"
+DIR: "/storage/jevnisek/ImageHarmonizationResults/ckpt/HAdobe5k-PAN-resnet101"

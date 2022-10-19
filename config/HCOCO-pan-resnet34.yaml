@@ -1,0 +1,27 @@
+DATASET:
+  root_dataset: "/storage/jevnisek/ImageHarmonizationDataset/"
+  list_train: "./data/HCOCO-training.odgt"
+  list_val: "./data/HCOCO-validation.odgt"
+  num_class: 2
+
+
+MODEL:
+  arch: "PAN"
+  encoder_name: "resnet34"
+
+TRAIN:
+  batch_size_per_gpu: 8
+  num_epochs: 2000
+  optim: "Adam"
+  lr: 1e-4
+
+
+VAL:
+  visualize: False
+  checkpoint: "epoch_2000.pth"
+
+TEST:
+  checkpoint: "epoch_2000.pth"
+  result: "./"
+
+DIR: "/storage/jevnisek/ImageHarmonizationResults/ckpt/HCOCO-PAN-resnet34"
