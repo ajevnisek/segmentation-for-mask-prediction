@@ -43,9 +43,13 @@ def parse_args():
 
 cfg = parse_args()
 
-if not os.path.exists(cfg.DIR):
-    head, tail = os.path.split(cfg.DIR)
-    cfg.DIR = os.path.join('ckpt', tail)
+try:
+    os.makedirs(cfg.DIR, exist_ok=True)
+except:
+    if not os.path.exists(cfg.DIR):
+        head, tail = os.path.split(cfg.DIR)
+        cfg.DIR = os.path.join('ckpt', tail)
+
 
 # download data
 dataset = cfg.DATASET.name

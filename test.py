@@ -66,13 +66,32 @@ os.makedirs(os.path.join(logs_root, 'images'), exist_ok=True)
 # download data
 root = "../data/Image_Harmonization_Dataset/"
 
+try:
+    os.makedirs(cfg.DIR, exist_ok=True)
+except:
+    if not os.path.exists(cfg.DIR):
+        head, tail = os.path.split(cfg.DIR)
+        cfg.DIR = os.path.join('ckpt', tail)
+
+
+# download data
+dataset = cfg.DATASET.name
 train_odgt = f'./data/{dataset}-training.odgt'
 test_odgt = f'./data/{dataset}-validation.odgt'
 
 # init train, val, test sets
-train_dataset = ImageHarmonizationMaskDataset(root, train_odgt, "train")
-valid_dataset = ImageHarmonizationMaskDataset(root, test_odgt, "valid")
-test_dataset = ImageHarmonizationMaskDataset(root, test_odgt, "test")
+
+if not os.path.exists(cfg.DATASET.root_dataset):
+    cfg.DATASET.root_dataset = '../data/Image_Harmonization_Dataset/'
+
+
+# init train, val, test sets
+train_dataset = ImageHarmonizationMaskDataset(cfg.DATASET.root_dataset,
+                                              train_odgt, "train")
+valid_dataset = ImageHarmonizationMaskDataset(cfg.DATASET.root_dataset,
+                                              test_odgt, "valid")
+test_dataset = ImageHarmonizationMaskDataset(cfg.DATASET.root_dataset,
+                                             test_odgt, "test")
 
 print(f"Train size: {len(train_dataset)}")
 print(f"Valid size: {len(valid_dataset)}")
